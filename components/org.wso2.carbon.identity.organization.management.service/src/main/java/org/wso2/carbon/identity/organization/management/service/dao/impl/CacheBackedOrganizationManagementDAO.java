@@ -25,6 +25,7 @@ import org.wso2.carbon.identity.organization.management.service.cache.Organizati
 import org.wso2.carbon.identity.organization.management.service.cache.TenantDomainCacheByOrgId;
 import org.wso2.carbon.identity.organization.management.service.cache.TenantDomainCacheEntry;
 import org.wso2.carbon.identity.organization.management.service.dao.OrganizationManagementDAO;
+import org.wso2.carbon.identity.organization.management.service.exception.OrganizationManagementException;
 import org.wso2.carbon.identity.organization.management.service.exception.OrganizationManagementServerException;
 import org.wso2.carbon.identity.organization.management.service.filter.ExpressionNode;
 import org.wso2.carbon.identity.organization.management.service.model.BasicOrganization;
@@ -475,4 +476,11 @@ public class CacheBackedOrganizationManagementDAO implements OrganizationManagem
         OrganizationIdCacheKey cacheKey = new OrganizationIdCacheKey(organizationId);
         OrganizationDetailsCacheByOrgId.getInstance().clearCacheEntry(cacheKey, tenantDomain);
     }
+
+    @Override
+    public String getAssociatedUserId(String sharedUserId, String sharedOrgId) throws OrganizationManagementException {
+
+        return organizationMgtDAO.getAssociatedUserId(sharedUserId, sharedOrgId);
+    }
+
 }

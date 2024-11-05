@@ -350,6 +350,9 @@ public class SQLConstants {
             "(SELECT UM_ID FROM UM_ORG WHERE %s) AND OH.DEPTH %s) ORDER BY UM_ORG.UM_CREATED_TIME %s OFFSET 0 ROWS " +
             "FETCH NEXT :" + SQLPlaceholders.DB_SCHEMA_LIMIT + "; ROWS ONLY";
 
+    public static final String GET_RESIDENT_USER_ID_OF_SHARED_USER = "SELECT UM_ASSOCIATED_USER_ID FROM UM_ORG_USER_ASSOCIATION " +
+            "WHERE UM_USER_ID = ? AND UM_ORG_ID = ?";
+
     /**
      * SQL Placeholders.
      */
@@ -373,5 +376,7 @@ public class SQLConstants {
         public static final String DB_SCHEMA_COLUMN_NAME_AUDIENCE_ID = "AUDIENCE_ID";
         public static final String DB_SCHEMA_COLUMN_NAME_USER_NAME = "USER_NAME";
         public static final String DB_SCHEMA_COLUMN_NAME_USER_DOMAIN = "USER_DOMAIN";
+        public static final String DB_SCHEMA_COLUMN_NAME_SHARED_USER_ID = "UM_USER_ID";
+        public static final String DB_SCHEMA_COLUMN_NAME_SHARED_ORG_ID = "UM_ORG_ID";
     }
 }

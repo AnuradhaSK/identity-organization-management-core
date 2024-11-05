@@ -313,4 +313,18 @@ public interface OrganizationManager {
 
         throw new NotImplementedException();
     }
+
+    /**
+     * Get the original user id of the given associated user id.
+     *
+     * @param sharedUserId The shared user id.
+     * @param sharedOrgId  The shared organization id.
+     * @return The original user id of the given associated user id.
+     * @throws OrganizationManagementException The exception thrown when retrieving the original user id of the given
+     *                                         shared user id.
+     */
+    default String getAssociatedUserId(String sharedUserId, String sharedOrgId) throws OrganizationManagementException {
+
+        throw new NotImplementedException();
+    }
 }

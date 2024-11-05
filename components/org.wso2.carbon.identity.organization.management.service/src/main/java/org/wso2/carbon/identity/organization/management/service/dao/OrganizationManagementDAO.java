@@ -18,6 +18,9 @@
 
 package org.wso2.carbon.identity.organization.management.service.dao;
 
+import org.apache.commons.lang.NotImplementedException;
+import org.apache.commons.lang.StringUtils;
+import org.wso2.carbon.identity.organization.management.service.exception.OrganizationManagementException;
 import org.wso2.carbon.identity.organization.management.service.exception.OrganizationManagementServerException;
 import org.wso2.carbon.identity.organization.management.service.filter.ExpressionNode;
 import org.wso2.carbon.identity.organization.management.service.model.BasicOrganization;
@@ -388,4 +391,17 @@ public interface OrganizationManagementDAO {
      * @throws OrganizationManagementServerException The server exception thrown when adding a root organization.
      */
     void addRootOrganization(Organization rootOrganization) throws OrganizationManagementServerException;
+
+    /**
+     * Retrieve the root organization user id.
+     *
+     * @param sharedUserId The shared user id.
+     * @param sharedOrgId The shared organization id.
+     * @return The associated user id.
+     * @throws OrganizationManagementException The server exception thrown when retrieving the associated user id.
+     */
+    default String getAssociatedUserId(String sharedUserId, String sharedOrgId) throws OrganizationManagementException {
+
+        return StringUtils.EMPTY;
+    }
 }

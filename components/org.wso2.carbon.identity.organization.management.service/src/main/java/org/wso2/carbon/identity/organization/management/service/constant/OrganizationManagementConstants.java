@@ -719,7 +719,10 @@ public class OrganizationManagementConstants {
                 "organization with ID: %s."),
         ERROR_CODE_ERROR_REVOKING_SHARED_APP_TOKENS("65138", "Error while revoking tokens issued for " +
                 "shared application.", "Server encountered an error while revoking tokens issued for application: " +
-                "%s in organization with ID: %s");
+                "%s in organization with ID: %s"),
+        ERROR_CODE_ERROR_GETTING_ASSOCIATED_USER_ID("65139", "Error while getting the associated user ID.",
+                "Server encountered an error while getting the associated user ID for the shared user with ID: %s in organization : %s")
+        ;
 
         private final String code;
         private final String message;
